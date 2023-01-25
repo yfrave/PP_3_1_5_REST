@@ -37,7 +37,7 @@
                     </div>
                     <table class="table table-striped table-bordered table-hover caption-top">
                         <caption><p class="fw-bold">About user</p></caption>
-                        <thead class="table-dark">
+                        <thead class="table">
                         <tr>
                             <th>ID</th>
                             <th>Username</th>
@@ -54,6 +54,7 @@
                             <td th:text = "${user.email}"></td>
                             <td th:text = "${user.roles}"></td>
                         </tr>
+                        <script th:src="@{/user_js/page_user.js}"></script>
                         </tbody>
                     </table>
                 </div>

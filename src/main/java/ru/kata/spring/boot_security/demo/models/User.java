@@ -5,6 +5,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -121,10 +122,6 @@ public class User implements UserDetails {
                 Collectors.toList());
     }
 
-
-    public User getUser() {
-        return User.this;
-    }
 
     @Override
     public String getPassword() {

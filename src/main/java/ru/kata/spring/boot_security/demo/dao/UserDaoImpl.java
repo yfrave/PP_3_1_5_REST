@@ -1,5 +1,6 @@
 package ru.kata.spring.boot_security.demo.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.kata.spring.boot_security.demo.models.User;
@@ -14,10 +15,16 @@ public class UserDaoImpl implements UserDao {
     @PersistenceContext
     EntityManager entityManager;
 
+    @Autowired
+    public UserDaoImpl (EntityManager entityManager){
+        this.entityManager = entityManager;
+    }
+
     @Override
     @Transactional(readOnly = true)
     public List<User> index() {
-        return entityManager.createQuery("select user from User user", User.class).getResultList();
+        return entityManager.createQuery("select distinct u from User u left join fetch u.roles ", User.class)
+                .getResultList();
     }
 
     @Override
