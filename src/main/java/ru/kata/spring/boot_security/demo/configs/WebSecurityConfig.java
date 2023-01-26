@@ -27,26 +27,32 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
+//    @Override
+//    protected void configure(HttpSecurity http) throws Exception {
+//        // конфигурируем авторизацию
+//        http
+//                .csrf().disable()
+//                .authorizeRequests()
+//
+//                .antMatchers("api/admin/**").hasRole("ADMIN")
+//                .antMatchers( "/user").hasRole("USER")
+//                .antMatchers("/","/index","/login").permitAll()
+//                .anyRequest().authenticated()
+//                    .and()
+//                .formLogin()
+//                .passwordParameter("password")
+//                .usernameParameter("username")
+//                .successHandler(successUserHandler).permitAll()
+//                    .and()
+//                .logout()
+//                .logoutUrl("/logout").permitAll();
+//
+//    }
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        // конфигурируем авторизацию
-        http
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity
                 .csrf().disable()
-                .authorizeRequests()
-
-                .antMatchers("api/admin/**").hasRole("ADMIN")
-                .antMatchers( "/user").hasRole("USER")
-                .antMatchers("/","/index","/login").permitAll()
-                .anyRequest().authenticated()
-                    .and()
-                .formLogin()
-                .passwordParameter("password")
-                .usernameParameter("username")
-                .successHandler(successUserHandler).permitAll()
-                    .and()
-                .logout()
-                .logoutUrl("/logout").permitAll();
-
+                .authorizeRequests().antMatchers("/").permitAll();
     }
 
 

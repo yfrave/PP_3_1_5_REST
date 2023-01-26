@@ -55,8 +55,10 @@ public class UserDaoImpl implements UserDao {
         entityManager.joinTransaction();
         User u = show(id);
         u.setUsername(user.getUsername());
+        u.setLastname(user.getLastname());
         u.setEmail(user.getEmail());
         u.setPassword(user.getPassword());
+        u.setRoles(user.getRoles());
         entityManager.persist(u);
     }
 

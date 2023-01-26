@@ -1,6 +1,6 @@
-const url = '/api/admin';
+const url = '/admin';
 
-async function getAdminPage() {
+async function getPage_admin() {
     let page = await fetch(url);
 
     if(page.ok) {
@@ -21,7 +21,7 @@ function loadTableData(listAllUser) {
         dataHtml +=
             `<tr>
     <td>${user.id}</td>
-    <td>${user.name}</td>
+    <td>${user.username}</td>
     <td>${user.lastname}</td>
     <td>${user.email}</td>
     <td>${roles}</td>
@@ -39,4 +39,4 @@ function loadTableData(listAllUser) {
     }
     tableBody.innerHTML = dataHtml;
 }
-getAdminPage();
+getPage_admin();

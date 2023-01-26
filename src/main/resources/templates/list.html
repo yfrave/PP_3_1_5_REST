@@ -23,7 +23,7 @@
     <!--    Боковая панель-->
     <div class="col-2">
         <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" id="v-pills-user-tab" data-bs-toggle="pill" href="#v-pills-user" role="tab"
+            <a class="nav-link active" id="v-pills-user-tab" data-bs-toggle="pill" href="/user/api" role="tab"
                aria-controls="v-pills-user" aria-selected="false">User</a>
         </div>
     </div>
@@ -46,15 +46,14 @@
                             <th>Roles</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td th:text = "${user.id}"></td>
-                            <td th:text = "${user.username}"></td>
-                            <td th:text = "${user.lastname}"></td>
-                            <td th:text = "${user.email}"></td>
-                            <td th:text = "${user.roles}"></td>
-                        </tr>
-                        <script th:src="@{/user_js/page_user.js}"></script>
+                        <tbody id="tbody">
+<!--                        <tr>-->
+<!--                            <td th:text = "${user.id}"></td>-->
+<!--                            <td th:text = "${user.username}"></td>-->
+<!--                            <td th:text = "${user.lastname}"></td>-->
+<!--                            <td th:text = "${user.email}"></td>-->
+<!--                            <td th:text = "${user.roles}"></td>-->
+<!--                        </tr>-->
                         </tbody>
                     </table>
                 </div>
@@ -62,5 +61,6 @@
         </div>
     </div>
 </div>
+<script th:src="@{/user_js/page_user.js}"></script>
 </body>
 </html>

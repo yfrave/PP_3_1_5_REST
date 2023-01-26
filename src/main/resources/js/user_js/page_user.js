@@ -1,6 +1,6 @@
 const url = '/user/api';
 
-async function getUserPage() {
+async function getPage_user() {
     let page = await fetch(url);
 
     if(page.ok) {
@@ -27,4 +27,4 @@ function  getInformationAboutUser(user) {
 
     document.getElementById(`tbody`).append(tr);
 }
-getUserPage();
+getPage_user();

@@ -79,7 +79,7 @@
                   <th>Delete</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
                 <tr th:each="user : ${user}">
                   <td th:text="${user.id}"></td>
                   <td th:text="${user.username}"></td>
@@ -301,15 +301,14 @@
               <th>Roles</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-              <td th:text="${findByUserName.id}"></td>
-              <td th:text="${findByUserName.username}"></td>
-              <td th:text="${findByUserName.lastname}"></td>
-              <td th:text="${findByUserName.email}"></td>
-              <td th:text="${findByUserName.roles}"></td>
-            </tr>
-            <script th:src="@{/admin_js/page_admin.js}"></script>
+            <tbody id="tbody">
+<!--            <tr>-->
+<!--              <td th:text="${findByUserName.id}"></td>-->
+<!--              <td th:text="${findByUserName.username}"></td>-->
+<!--              <td th:text="${findByUserName.lastname}"></td>-->
+<!--              <td th:text="${findByUserName.email}"></td>-->
+<!--              <td th:text="${findByUserName.roles}"></td>-->
+<!--            </tr>-->
             </tbody>
           </table>
         </div>
@@ -318,6 +317,9 @@
     </div>
   </div>
 </div>
-
+<script th:src="@{/admin_js/page_admin.js}"></script>
+<script th:src="@{/admin_js/page_delete.js}"></script>
+<script th:src="@{/admin_js/page_edit.js}"></script>
+<script th:src="@{/admin_js/page_newUser.js}"></script>
 </body>
 </html>
